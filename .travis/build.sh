@@ -1,9 +1,10 @@
 #!/bin/bash
 # Assumes that COMMIT, DOCKER_USER and DOCKER_PASS to be set
 VERSION=${1:-"latest"}
-COMMIT=$2
+COMMIT=${2:-$(git log -1 --pretty=format:"%h")}
 DOCKER_REGISTRY=quay.io
-REPO=${DOCKER_REGISTRY}/enmasse/api-proxy
+DOCKER_ORG=enmasse
+REPO=${DOCKER_REGISTRY}/${DOCKER_ORG}/api-proxy
 
 if [ -n "$TRAVIS_TAG" ]
 then
