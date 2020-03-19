@@ -7,7 +7,7 @@ ARG maven_version
 ARG commit
 ENV VERSION=${version} COMMIT=${commit} MAVEN_VERSION=${maven_version}
 
-COPY httpd.conf /etc/httpd/conf
+COPY cfg/httpd.conf /etc/httpd/conf
 
 EXPOSE 443
 
